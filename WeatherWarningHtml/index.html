@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>Weather Warning</title>
+        <link rel='stylesheet' href='styles.css' />
+        <meta name='viewport' content='width=device-width' />
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><![endif]-->
+    </head>
+    <body>
+        <div id='wrapper'>
+            <article>
+                <header>
+                    <h2>Weather Warning</h2>
+                    <h1>push forecast</h1>
+
+                    <form id='add-warning'>
+                        <div>
+                            <div>
+                                <p class="title">Regions<p>
+                                <input id="Western_Cape" type="checkbox" value="Western_Cape" />Western Cape
+                                <input id="Eastern_Cape" type="checkbox" value="Eastern_Cape" />Eastern Cape
+                                <input id="Northern_Cape" type="checkbox" value="Northern_Cape" />Northern Cape
+                                <input id="Free_State" type="checkbox" value="Free_State" />Free State
+                                <input id="KwaZulu-Natal" type="checkbox" value="KwaZulu-Natal" />KwaZulu-Natal
+                                </p>
+                                <p>
+                                <input id="Mpumalanga" type="checkbox" value="Mpumalanga" />Mpumalanga
+                                <input id="Gauteng" type="checkbox" value="Gauteng" />Gauteng
+                                <input id="Limpopo_Province" type="checkbox" value="Limpopo_Province" />Limpopo Province
+                                <input id="North_West" type="checkbox" value="North_West" />North West
+                                </p>
+                            </div>
+                            <div>
+                                <p class="title">Warning</p>
+                                    <input id="Snow" type="checkbox" value="Snow" />Snow
+                                    <input id="Heavy_Rain" type="checkbox" value="Heavy_Rain" />Heavy Rain
+                                    <input id="Gails" type="checkbox" value="Gails" />Gails
+                                    <input id="Big_Waves" type="checkbox" value="Big_Waves" />Big Waves
+                                </p>
+                            </div>
+                        </div>
+                            <p class="title">Message details</p>
+                            <button type='submit'>Push</button>
+                            <div>
+                                <input type='text' id='warning_msg_english' placeholder='Enter the english warning message here' />
+                                <input type='text' id='warning_msg_afrikaans' placeholder='Enter the afrikaans warning message here' />
+                            </div>
+                    </form>
+                </header>
+
+                <ul id='warnings'></ul>
+                <p id='summary'>Loading...</p>
+            </article>
+
+            <footer>
+                <a href='http://cloudbeatsch.com'>
+                    Weather Warning by cloudbeatsch
+                </a>
+                <ul id='errorlog'></ul>
+            </footer>
+        </div>
+
+        <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js'></script>
+        <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.0.min.js'></script>
+        <script src='page.js'></script>
+    </body>
+</html>

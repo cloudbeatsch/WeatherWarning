@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="WeatherWarningW8.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherWarningW8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="120, 58, 120, 80" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  TextWrapping="Wrap" Text="Signup for Weather Warnings" FontSize="42" VerticalAlignment="Top"/>
+            <ToggleSwitch Header="Snow" x:Name="SnowToggle" Grid.Row="1" Grid.Column="0" FontFamily="Global User Interface"/>
+            <ToggleSwitch Header="Heavy Rain" x:Name="HeavyRainToggle" Grid.Row="2" Grid.Column="0"/>
+            <ToggleSwitch Header="Gails" x:Name="GailsToggle" Grid.Row="3" Grid.Column="0" />
+            <ToggleSwitch Header="Big Waves" x:Name="BigWavesToggle" Grid.Row="4" Grid.Column="0"/>
+            <Button Name="SubscribeButton" Content="Subscribe" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="SubscribeButton_Click" />
+            <ListView x:Name="Regions" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width ="300" Grid.Row="1" Grid.RowSpan="4">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="RegionItem" IsChecked="{Binding IsChecked, Mode=TwoWay}" Content="{Binding RegionName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Column="0" Grid.Row="5">
+                <RadioButton Content="English" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="English"/>
+                <RadioButton Content="Afrikaans" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="Afrikaans" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
