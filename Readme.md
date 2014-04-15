@@ -17,7 +17,9 @@ To get this demo working you have to configure the following steps:
             hub = new NotificationHub("[[HUB_NAME]]", "[[DefaultListenSharedAccessSignature]]");
         }
 5.) create a new mobile service
+
 6.) add a table called **warning** to the mobile service 
+
 7.) add the following script to the insert operation of the warning table and replace the notification HUB_NAME and the Default**Full**SharedAccessSignature:
 
     function insert(item, user, request) {
